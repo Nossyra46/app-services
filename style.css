@@ -1,0 +1,34 @@
+.container {
+	width: 400px;
+	background-color: #60A0BB;
+	color: #fff;
+	border-radius: 5px;
+	padding: 50px;
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+li {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	border-radius: 5px;
+	padding: 10px 10px;
+	margin-bottom: 5px;
+
+}
+
+.active {
+	background-color: #8EC16D;
+}
+
+.unactive {
+	background-color: #777777;
+}

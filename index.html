@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="servicesApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Application de Services</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="servCtrl">
+	<div class="container">
+		<h1> Services </h1>
+		<div class="alert alert-info">
+			Choisissez les élements à inclure
+			<br>
+			<ng-pluralize count="servCount" when="{'0': 'Aucun service selectionné', 'one': 'Un service selectionné', 'other': '{} services selectionnés'}">
+		</div>
+		<ul>
+			<li ng-repeat="serv in services" ng-class="{'active': serv.active, 'unactive': !serv.active}" ng-click="toggleActive(serv)"><span class="left">{{serv.name}}</span><span class="right">{{serv.price | currency : '€'}}</span></li>
+		</ul>
+		<hr></hr>
+
+		<span ng-model="sum"> {{sum | currency : '€'}} </span>
+	</div>
+</body>
+</html>
